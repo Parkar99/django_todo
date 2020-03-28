@@ -3,5 +3,7 @@
 {% block content %}
     {% for task in tasks %}
         {% include 'components/task_list_item.html' with id=task.id title=task.title is_done=task.is_done date=task.date %}
+    {% empty %}
+        <h2>No Tasks</h2>
     {% endfor %}
 {% endblock content %}

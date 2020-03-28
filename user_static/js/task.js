@@ -1,4 +1,6 @@
-function toggleTask(element, isDeleting = false) {
+let isDeleting = false;
+
+function toggleTask(element) {
   let title = element.getElementsByClassName("task-title");
   title = title[0];
 
@@ -133,9 +135,10 @@ function addTask() {
 }
 
 function deleteTask(element) {
+  isDeleting = true;
   const taskId = element.getAttribute("data-id");
 
-  toggleTask(element.parentElement.parentElement, true);
+  toggleTask(element.parentElement.parentElement);
 
   if (taskId === "") {
     M.toast({

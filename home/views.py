@@ -43,6 +43,7 @@ class Index(View):
             try:
                 task = Task.objects.get(id=task_id)
 
+                print('deleting', task)
                 task.delete()
 
                 return JsonResponse({'details': 'success'})
