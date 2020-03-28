@@ -4,11 +4,13 @@
   }
 
   .my-#{$space} {
-    margin: #{$space}rem 0;
+    margin-top: #{$space}rem;
+    margin-bottom: #{$space}rem;
   }
 
   .mx-#{$space} {
-    margin: 0 #{$space}rem;
+    margin-left: #{$space}rem;
+    margin-right: #{$space}rem;
   }
 
   .mt-#{$space} {
@@ -32,11 +34,13 @@
   }
 
   .py-#{$space} {
-    padding: #{$space}rem 0;
+    padding-top: #{$space}rem;
+    padding-bottom: #{$space}rem;
   }
 
   .px-#{$space} {
-    padding: 0 #{$space}rem;
+    padding-left: #{$space}rem;
+    padding-right: #{$space}rem;
   }
 
   .pt-#{$space} {
@@ -54,4 +58,12 @@
   .pl-#{$space} {
     padding-left: #{$space}rem;
   }
+}
+
+.d-block {
+  display: block;
+}
+
+.bold-text {
+  font-weight: bold;
 }

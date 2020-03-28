@@ -18,28 +18,27 @@
 </head>
 <body>
 
-    <!-- START: Modal Structure -->
-    <div id="add-task" class="modal">
+    <!-- START: Modal Structure For Adding Tasks -->
+    <div id="add-task" class="modal py-1 px-2">
         <div class="modal-content">
             <h4>Add New Task</h4>
-            <div class="row">
-                 <div class="input-field col s6">
-                    <input id="task" type="text" class="validate">
-                    <label for="task">Last Name</label>
-                </div>
+            <div class="divider mx-1 mb-2"></div>
+            <div class="input-field">
+                <input id="add-task-text" type="text" class="validate">
+                <label for="add-task-text">Add Task</label>
             </div>
-        </div>
+        </div>  
+        <div class="divider mx-2"></div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Add</a>
+            <a class="btn waves-effect waves-light blue d-block" onclick="addTask()">Add</a>
         </div>
     </div>
-    <!-- END: Modal Structure -->
+    <!-- END: Modal Structure For Adding Tasks -->
 
     <!-- START: Navbar -->
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">TODO</a>
-            <i class="material-icons" onclick=""><a class="waves-effect waves-light modal-trigger" href="#add-task">add</a></i>
+            <a href="{% url 'index' %}" class="brand-logo center">TODO</a>
         </div>
     </nav>
     <!-- END: Navbar -->
@@ -51,13 +50,24 @@
     </div>
     <!-- END: Main Content -->
 
+    <!-- START: Floating Action Button -->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large modal-trigger" href="#add-task">
+            <i class="large material-icons">add</i>
+        </a>
+    </div>
+    <!-- END: Floating Action Button -->
+
     <!-- START: Footer -->
     <!-- END: Footer -->
 
 
     <script src="{% static 'js/materialize/bin/materialize.min.js' %}"></script>
+    <script src="{% static 'js/js.cookie.min.js' %}"></script>
     <script src="{% static 'js/task.js' %}"></script>
 
     <script src="{% static 'js/main.js' %}"></script>
+
+    {% csrf_token %}
 </body>
 </html>
