@@ -1,0 +1,12 @@
+<a class="task z-depth-1 waves-effect my-2" onclick="toggleTask(this)" data-id="{{ id }}">
+    <label>
+        <input type="checkbox" {% if is_done %}checked{% endif %} />
+        <span class="task-title {% if is_done %}done{% endif %}">{{ title }}</span>
+    </label>
+    <div class="spacer"></div>
+    <div class="task-side">
+        <div class="task-date">{{ date|date:'DATE_FORMAT' }}</div>
+        <div class="spacer"></div>
+        <i class="material-icons">delete</i>
+    </div>
+</a>

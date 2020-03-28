@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon Link -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+
+    <!-- Materialize Link -->
+    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+
+    <!-- Material Icons Link -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>{% if title %}{{ title }}{% else %}TODO{% endif %}</title>
+</head>
+<body>
+
+    <!-- START: Modal Structure -->
+    <div id="add-task" class="modal">
+        <div class="modal-content">
+            <h4>Add New Task</h4>
+            <div class="row">
+                 <div class="input-field col s6">
+                    <input id="task" type="text" class="validate">
+                    <label for="task">Last Name</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Add</a>
+        </div>
+    </div>
+    <!-- END: Modal Structure -->
+
+    <!-- START: Navbar -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">TODO</a>
+            <i class="material-icons" onclick=""><a class="waves-effect waves-light modal-trigger" href="#add-task">add</a></i>
+        </div>
+    </nav>
+    <!-- END: Navbar -->
+
+    <!-- START: Main Content -->
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <!-- END: Main Content -->
+
+    <!-- START: Footer -->
+    <!-- END: Footer -->
+
+
+    <script src="{% static 'js/materialize/bin/materialize.min.js' %}"></script>
+    <script src="{% static 'js/task.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
