@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+// Color
+@import "components/color-variables";
+@import "components/color-classes";
+
+// Variables;
+@import "components/variables";
+
+// Reset
+@import "components/normalize";
+
+// components
+@import "components/global";
+@import "components/badges";
+@import "components/icons-material-design";
+@import "components/grid";
+@import "components/navbar";
+@import "components/typography";
+@import "components/transitions";
+@import "components/cards";
+@import "components/toast";
+@import "components/tabs";
+@import "components/tooltip";
+@import "components/buttons";
+@import "components/dropdown";
+@import "components/waves";
+@import "components/modal";
+@import "components/collapsible";
+@import "components/chips";
+@import "components/materialbox";
+@import "components/forms/forms";
+@import "components/table_of_contents";
+@import "components/sidenav";
+@import "components/preloader";
+@import "components/slider";
+@import "components/carousel";
+@import "components/tapTarget";
+@import "components/pulse";
+@import "components/datepicker";
+@import "components/timepicker";
+
+// Custom SCSS
+@import "config";
+
+body {
+  background-color: #f0f0f0;
+}
+
+nav {
+  background-color: $primary-dark;
+  padding: 0 2rem;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: white;
+  border-radius: 5px;
+
+  label {
+    .task-title {
+      font-size: 16px;
+      color: black;
+    }
+
+    .done {
+      color: grey;
+      text-decoration: line-through;
+    }
+  }
+
+  .spacer {
+    width: 20px;
+  }
+
+  &-side {
+    display: flex;
+    align-items: center;
+
+    .spacer {
+      width: 15px;
+    }
+
+    .task-date {
+      font-size: 12px;
+      color: grey;
+    }
+
+    .material-icons {
+      color: red;
+    }
+  }
+}
+
+.nav-wrapper {
+  i {
+    float: right;
+  }
+}
+
+@import "utils";
+@import "mobile";

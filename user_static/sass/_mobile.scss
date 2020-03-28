@@ -1,0 +1,13 @@
+@media #{$small-and-down} {
+  .task {
+    &-side {
+      .task-date {
+        display: none;
+      }
+
+      .spacer {
+        display: none;
+      }
+    }
+  }
+}
