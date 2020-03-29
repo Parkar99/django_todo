@@ -22,14 +22,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0h_3!=#k^qe58y8i$^_4bid^sp-e^xw@ewq+fma6xsjcp6br&g'
+SECRET_KEY = os.environ.get('TODO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ.get('DEBUG') is not None else False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
     '192.168.0.145',
+    'parkar-todo.herokuapp.com',
 ]
 
 
@@ -136,4 +137,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'user_static'),
 ]
 
-django_heroku.settings(locals())
+if not DEBUG:
+    django_heroku.settings(locals())
